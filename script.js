@@ -13,7 +13,7 @@ for (let i = 0; i < GRID_SIZE * GRID_SIZE; i++) {
     })
     .then(res => res.json())
     .then(data => {
-      if (data.id) {
+      if (data.url) {
         window.location = `https://checkout.stripe.com/pay/${data.url}`;
       } else {
         alert("Checkout session failed");
