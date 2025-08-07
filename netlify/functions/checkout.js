@@ -2,8 +2,6 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 exports.handler = async function (event) {
   try {
-    const { square } = JSON.parse(event.body);
-
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       mode: 'payment',
@@ -11,17 +9,14 @@ exports.handler = async function (event) {
         price_data: {
           currency: 'gbp',
           product_data: {
-            name: `Ad Square #${square}`
+            name: `Test Square`
           },
-          unit_amount: 100, // £1 in pence
+          unit_amount: 100,
         },
         quantity: 1,
       }],
-      success_url: `${process.env.URL}/success.html`,
-      cancel_url: `${process.env.URL}/cancel.html`,
-      metadata: {
-        square
-      }
+      success_url: 'https://theadvertisingboard.org/success.html',
+      cancel_url: 'https://theadvertisingboard.org/cancel.html',
     });
 
     return {
@@ -29,7 +24,7 @@ exports.handler = async function (event) {
       body: JSON.stringify({ url: session.url })
     };
   } catch (error) {
-    console.error("Stripe session creation error:", error.message);
+    console.error("Checkout error:", error.message);
     return {
       statusCode: 500,
       body: JSON.stringify({ error: error.message })
