@@ -15,8 +15,8 @@ exports.handler = async function (event) {
         },
         quantity: 1,
       }],
-      success_url: '${process.env.URL}/success.html',
-      cancel_url: '${process.env.URL}/cancel.html',
+      success_url: 'https://theadvertisingboard.org/success.html',
+      cancel_url: 'https://theadvertisingboard.org/cancel.html'',
     });
 
     return {
