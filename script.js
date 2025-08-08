@@ -1,10 +1,11 @@
-const GRID_SIZE = 1000;
+const GRID_SIZE = 100; // Limit to 100x100 for testing performance
 const board = document.getElementById('board');
 
 for (let i = 0; i < GRID_SIZE * GRID_SIZE; i++) {
   const square = document.createElement('div');
   square.classList.add('square');
   square.dataset.index = i;
+
   square.addEventListener('click', () => {
     fetch('/.netlify/functions/checkout', {
       method: 'POST',
@@ -13,14 +14,18 @@ for (let i = 0; i < GRID_SIZE * GRID_SIZE; i++) {
     })
     .then(res => res.json())
     .then(data => {
-  if (data.url) {
-    window.location = data.url;  // ✅ not using /pay/${id}
-  } else {
-    alert("Checkout session failed");
-    console.error("Missing session URL:", data);
-  }
-})
+      if (data.url) {
+        window.location = data.url;
+      } else {
+        alert("Checkout session failed");
+      }
+    })
+    .catch(err => {
+      console.error("Fetch error:", err);
+      alert("Network error.");
+    });
   });
+
   board.appendChild(square);
 }
 

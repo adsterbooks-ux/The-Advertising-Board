@@ -1,24 +1,40 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  text-align: center;
-  overflow: hidden;
-}
+/* Base styles for larger screens */
 #board {
   display: grid;
-  grid-template-columns: repeat(1000, 1fr);
+  grid-template-columns: repeat(100, 1fr); /* 100 columns on desktop */
   gap: 1px;
-  width: 100%;
-  height: 90vh;
-  overflow: scroll;
-  transform-origin: 0 0;
+  margin: 20px auto;
+  width: max-content;
 }
+
 .square {
   width: 8px;
   height: 8px;
   background-color: #ddd;
   border: 0.5px solid #ccc;
 }
-.controls {
-  margin: 10px;
+
+/* Mobile responsive layout */
+@media (max-width: 768px) {
+  #board {
+    grid-template-columns: repeat(10, 1fr); /* 10 columns on smaller screens */
+    gap: 1px;
+  }
+
+  .square {
+    width: 6px;  /* Smaller squares on mobile */
+    height: 6px;
+  }
+}
+
+/* Additional mobile optimizations */
+@media (max-width: 480px) {
+  #board {
+    grid-template-columns: repeat(5, 1fr);  /* Less squares visible */
+  }
+
+  .square {
+    width: 4px;  /* Even smaller squares */
+    height: 4px;
+  }
 }
