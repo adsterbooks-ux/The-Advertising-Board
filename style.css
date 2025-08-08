@@ -1,8 +1,7 @@
-/* Base styles for larger screens */
 body {
-  background-color: #000;  /* Black background */
-  color: #fff;  /* White text for contrast */
-  font-family: 'Arial', sans-serif;  /* Modern font */
+  background-color: #000;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
   text-align: center;
   margin: 0;
   padding: 0;
@@ -18,7 +17,7 @@ h1 {
   font-size: 1.5em;
   padding: 15px;
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.2);  /* Light transparent background */
+  background-color: rgba(255, 255, 255, 0.2);
   display: inline-block;
 }
 
@@ -28,36 +27,31 @@ h1 {
   font-weight: bold;
 }
 
-/* Countdown Timer Styling */
 #countdown {
-  background-color: #4CAF50; /* Green background for the timer */
+  background-color: #4CAF50; /* Green */
   color: white;
-  font-size: 1.5em;
 }
 
 #countdown span {
-  font-size: 2em;  /* Larger font for time remaining */
+  font-size: 2em;
 }
 
-/* Squares Bought Styling */
 #squares-bought {
-  background-color: #2196F3; /* Blue background for squares bought */
+  background-color: #2196F3; /* Blue */
   color: white;
-  font-size: 1.5em;
 }
 
 #squares-bought span {
-  font-size: 2em; /* Larger font for the number of squares bought */
+  font-size: 2em;
 }
 
-/* Controls Section Styling */
 .controls {
   margin-top: 30px;
   margin-bottom: 30px;
 }
 
 button {
-  background-color: #4CAF50; /* Green button */
+  background-color: #4CAF50;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -68,20 +62,18 @@ button {
 }
 
 button:hover {
-  background-color: #45a049; /* Darker green on hover */
+  background-color: #45a049;
 }
 
-/* Square grid */
 #board {
   display: grid;
-  grid-template-columns: repeat(100, 1fr); /* 100 columns on desktop */
+  grid-template-columns: repeat(100, 1fr);  /* 100 columns for desktop */
   gap: 1px;
   margin: 20px auto;
-  justify-items: center; /* Center squares within grid */
+  justify-items: center;
   width: max-content;
 }
 
-/* Square styling */
 .square {
   width: 8px;
   height: 8px;
@@ -95,44 +87,42 @@ button:hover {
   background-color: #bbb;
 }
 
-/* Mobile responsive layout for medium screens (tablets and larger mobile devices) */
+/* Mobile responsive layout */
 @media (max-width: 768px) {
   #board {
     grid-template-columns: repeat(20, 1fr); /* 20 columns on medium mobile/tablet */
-    gap: 1px;
-    width: 100%; /* Make board take full width of the container */
+    gap: 0;  /* Remove gaps between squares */
+    width: 100%; /* Make the board take the full width of the container */
   }
 
   .square {
-    width: 10px; /* Slightly bigger squares */
+    width: 10px;  /* Slightly bigger squares */
     height: 10px;
   }
 }
 
-/* Small devices (phones) */
 @media (max-width: 480px) {
   #board {
     grid-template-columns: repeat(15, 1fr); /* 15 columns on small screens */
-    gap: 1px;
+    gap: 0;  /* Remove gaps between squares */
     width: 100%; /* Full width for mobile */
   }
 
   .square {
-    width: 12px; /* Larger squares for mobile phones */
+    width: 12px;  /* Larger squares for mobile phones */
     height: 12px;
   }
 }
 
-/* Very small screens */
 @media (max-width: 320px) {
   #board {
     grid-template-columns: repeat(10, 1fr); /* 10 columns on very small screens */
-    gap: 1px;
+    gap: 0;  /* Remove gaps between squares */
     width: 100%; /* Full width for very small screens */
   }
 
   .square {
-    width: 14px; /* Larger squares on very small screens */
+    width: 14px;  /* Larger squares on very small screens */
     height: 14px;
   }
 }
