@@ -14,21 +14,21 @@ h1 {
 }
 
 #countdown, #squares-bought {
-  margin: 20px 0;
-  font-size: 1.5em;
-  padding: 15px;
+  margin: 10px 0;
+  font-size: 1em;  /* Smaller font size */
+  padding: 8px;
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.2);
   display: inline-block;
   position: fixed;
-  top: 20px;  /* Fixed to the top */
+  top: 10px;  /* Fixed to the top */
   left: 20px;
   z-index: 10;
 }
 
 #countdown h2, #squares-bought h2 {
-  font-size: 1.2em;
-  margin-bottom: 10px;
+  font-size: 0.8em;  /* Smaller header text */
+  margin-bottom: 5px;
   font-weight: bold;
 }
 
@@ -38,7 +38,7 @@ h1 {
 }
 
 #countdown span {
-  font-size: 2em;
+  font-size: 1.2em; /* Smaller timer text */
 }
 
 #squares-bought {
@@ -47,14 +47,14 @@ h1 {
 }
 
 #squares-bought span {
-  font-size: 2em;
+  font-size: 1.2em; /* Smaller number for squares bought */
 }
 
 .zoom-controls {
   position: fixed;
   top: 20px;
   right: 20px;
-  z-index: 10;  /* Keep zoom buttons above everything else */
+  z-index: 10;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 10px;
   border-radius: 5px;
