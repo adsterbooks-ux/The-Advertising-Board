@@ -50,12 +50,13 @@ h1 {
 
 #board {
   display: grid;
-  grid-template-columns: repeat(100, 1fr);  /* 100 columns on desktop (100x100 grid = 10,000 squares) */
+  grid-template-columns: repeat(100, 1fr);  /* 100 columns for 100x100 grid */
   gap: 0;  /* Remove gaps between squares */
   margin: 20px auto;
   justify-items: center;
   width: max-content;
   transition: transform 0.3s ease; /* Smooth transition for zoom */
+  transform: scale(0.1);  /* Initial super zoomed-out scale */
 }
 
 .square {
@@ -74,8 +75,8 @@ h1 {
 /* Mobile responsive layout */
 @media (max-width: 768px) {
   #board {
-    grid-template-columns: repeat(10, 1fr);  /* Initially show 10 columns */
-    gap: 0;  /* No gap between squares */
+    grid-template-columns: repeat(10, 1fr);  /* Fit 10 columns on mobile initially */
+    gap: 0;
     width: 100%;
   }
 
@@ -88,7 +89,7 @@ h1 {
 @media (max-width: 480px) {
   #board {
     grid-template-columns: repeat(10, 1fr);  /* Keep 10 columns on very small screens */
-    gap: 0;  /* Remove gaps between squares */
+    gap: 0;  /* No gap between squares */
   }
 
   .square {
