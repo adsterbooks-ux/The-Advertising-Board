@@ -67,10 +67,10 @@ button:hover {
 
 .container {
   width: 100%;
-  max-width: 100%;  /* Max width for mobile screens */
+  max-width: 100%;
   margin: 0 auto;
-  padding: 0 15px;  /* Adds space on both sides */
-  box-sizing: border-box;  /* Ensures padding doesn't affect the layout */
+  padding: 0 25px;  /* Increase space on both sides of mobile layout */
+  box-sizing: border-box;  /* Ensure padding doesn't affect layout */
 }
 
 #board {
@@ -80,6 +80,7 @@ button:hover {
   margin: 20px auto;
   justify-items: center; /* Center squares within grid */
   width: max-content;
+  transition: transform 0.3s ease; /* Smooth transition for zoom */
 }
 
 .square {
@@ -97,12 +98,8 @@ button:hover {
 
 /* Mobile responsive layout */
 @media (max-width: 768px) {
-  .container {
-    padding: 0 20px;  /* Increased space on mobile */
-  }
-
   #board {
-    grid-template-columns: repeat(auto-fill, minmax(10px, 1fr)); /* Auto-fill columns */
+    grid-template-columns: repeat(auto-fill, minmax(10px, 1fr)); /* Fit squares to screen */
     gap: 0;  /* Remove gaps between squares */
     width: 100%; /* Full width for mobile */
   }
@@ -114,10 +111,6 @@ button:hover {
 }
 
 @media (max-width: 480px) {
-  .container {
-    padding: 0 20px;  /* Space on sides for smaller screens */
-  }
-
   #board {
     grid-template-columns: repeat(auto-fill, minmax(12px, 1fr)); /* Fit more squares on mobile */
     gap: 0;  /* Remove gaps between squares */
@@ -125,24 +118,20 @@ button:hover {
   }
 
   .square {
-    width: 12px;  /* Larger squares for mobile phones */
+    width: 12px;
     height: 12px;
   }
 }
 
 @media (max-width: 320px) {
-  .container {
-    padding: 0 15px;  /* Slightly less space on very small screens */
-  }
-
   #board {
-    grid-template-columns: repeat(auto-fill, minmax(14px, 1fr)); /* Fit more squares */
+    grid-template-columns: repeat(auto-fill, minmax(14px, 1fr)); /* Fit more squares on very small screens */
     gap: 0;  /* Remove gaps between squares */
     width: 100%;
   }
 
   .square {
-    width: 14px;  /* Larger squares on very small screens */
+    width: 14px;
     height: 14px;
   }
 }

@@ -19,14 +19,17 @@
     <h2>Squares Bought: <span id="square-count">0</span></h2>
   </div>
 
-  <!-- Controls (Zoom In and Out) -->
+  <!-- Controls Section (Zoom In and Out) -->
   <div class="controls">
     <button onclick="zoom(1.1)">Zoom In</button>
     <button onclick="zoom(0.9)">Zoom Out</button>
   </div>
 
-  <!-- Board for the squares -->
-  <div id="board"></div>
+  <!-- Main Container for the Board -->
+  <div class="container">
+    <!-- Board for the squares -->
+    <div id="board"></div>
+  </div>
 
   <script src="script.js"></script>
 
@@ -54,7 +57,6 @@
 
   <!-- Squares Bought Script -->
   <script>
-    // Fetch the number of squares bought (assuming you're using Supabase)
     const squareCount = 500;  // Example, you can replace with dynamic fetching from your database
     document.getElementById('square-count').innerText = squareCount;
   </script>
