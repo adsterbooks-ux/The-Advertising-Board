@@ -10,9 +10,9 @@ body {
 
 h1 {
   font-size: 2.5em;
-  margin-top: 100px; /* Added space at the top */
+  margin-top: 100px; /* Adjusted to make space for the fixed elements */
   position: relative;
-  z-index: 20;  /* Ensure title stays above the zoomable grid */
+  z-index: 20;
 }
 
 #countdown, #squares-bought {
@@ -35,30 +35,30 @@ h1 {
 #countdown {
   background-color: #4CAF50; /* Green */
   color: white;
-  top: 10px;  /* Fixed to the top */
+  top: 10px;
   left: 20px;
 }
 
 #countdown span {
-  font-size: 1.2em; /* Smaller timer text */
+  font-size: 1.2em;
 }
 
 #squares-bought {
   background-color: #2196F3; /* Blue */
   color: white;
-  top: 50px;  /* Move down so it doesn't overlap countdown */
+  top: 50px;
   left: 20px;
 }
 
 #squares-bought span {
-  font-size: 1.2em; /* Smaller number for squares bought */
+  font-size: 1.2em;
 }
 
 .zoom-controls {
   position: fixed;
   top: 20px;
   right: 20px;
-  z-index: 10;  /* Keep zoom buttons above everything else */
+  z-index: 10;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 10px;
   border-radius: 5px;
@@ -84,12 +84,12 @@ h1 {
   max-width: 100%;
   margin: 0 auto;
   padding: 0 25px;  /* More space on both sides of mobile layout */
-  box-sizing: border-box;  /* Ensure padding doesn't affect layout */
+  box-sizing: border-box;
 }
 
 #board {
   display: grid;
-  grid-template-columns: repeat(100, 1fr); /* 100 columns on desktop */
+  grid-template-columns: repeat(10, 1fr);  /* Start with 10 columns for mobile */
   gap: 1px;
   margin: 20px auto;
   justify-items: center;
@@ -113,9 +113,9 @@ h1 {
 /* Mobile responsive layout */
 @media (max-width: 768px) {
   #board {
-    grid-template-columns: repeat(auto-fill, minmax(10px, 1fr)); /* Fit squares to screen */
-    gap: 0;  /* Remove gaps between squares */
-    width: 100%; /* Full width for mobile */
+    grid-template-columns: repeat(5, 1fr);  /* Fit 5 columns on mobile initially */
+    gap: 0;
+    width: 100%;
   }
 
   .square {
@@ -126,9 +126,7 @@ h1 {
 
 @media (max-width: 480px) {
   #board {
-    grid-template-columns: repeat(auto-fill, minmax(12px, 1fr)); /* Fit more squares on mobile */
-    gap: 0;  /* Remove gaps between squares */
-    width: 100%; /* Full width for mobile */
+    grid-template-columns: repeat(5, 1fr);  /* Keep 5 columns on very small screens */
   }
 
   .square {
@@ -139,9 +137,7 @@ h1 {
 
 @media (max-width: 320px) {
   #board {
-    grid-template-columns: repeat(auto-fill, minmax(14px, 1fr)); /* Fit more squares on very small screens */
-    gap: 0;  /* Remove gaps between squares */
-    width: 100%;
+    grid-template-columns: repeat(4, 1fr);  /* 4 columns on very small screens */
   }
 
   .square {
