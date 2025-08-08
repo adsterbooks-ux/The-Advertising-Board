@@ -10,7 +10,7 @@ body {
 
 h1 {
   font-size: 2.5em;
-  margin-top: 100px; /* Adjusted to make space for the fixed elements */
+  margin-top: 120px; /* Added more space for fixed elements */
   position: relative;
   z-index: 20;
 }
@@ -35,7 +35,7 @@ h1 {
 #countdown {
   background-color: #4CAF50; /* Green */
   color: white;
-  top: 10px;
+  top: 20px;  /* Space at the top */
   left: 20px;
 }
 
@@ -46,7 +46,7 @@ h1 {
 #squares-bought {
   background-color: #2196F3; /* Blue */
   color: white;
-  top: 50px;
+  top: 70px;  /* Move down so it doesn't overlap countdown */
   left: 20px;
 }
 
@@ -115,7 +115,7 @@ h1 {
   #board {
     grid-template-columns: repeat(5, 1fr);  /* Fit 5 columns on mobile initially */
     gap: 0;
-    width: 100%;
+    width: 100%; /* Full width for mobile */
   }
 
   .square {
