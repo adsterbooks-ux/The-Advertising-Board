@@ -31,7 +31,7 @@ updateLeaderboard();
 // Function to generate the grid based on gridSize
 function generateGrid() {
   board.innerHTML = '';  // Clear the existing grid
-  
+
   for (let i = 0; i < gridSize * gridSize; i++) {
     const square = document.createElement('div');
     square.classList.add('square');
@@ -40,6 +40,9 @@ function generateGrid() {
     // Fetch purchase info for this square from the database (e.g., expiry date)
     const expiryDate = getExpiryDate(i); // This function fetches expiry from the database
     
+    // Log expiry date to debug
+    console.log(`Square ${i}: Expiry Date - ${expiryDate}`);
+
     const timeRemaining = calculateTimeRemaining(expiryDate); // Calculate remaining time
 
     // Add countdown timer or message
@@ -102,6 +105,10 @@ function calculateTimeRemaining(expiryDate) {
 function getExpiryDate(squareId) {
   // Example of retrieving data from the database (replace with your logic)
   const expiryDate = fetchExpiryDateFromDatabase(squareId);  // Mocked database call
+  if (!expiryDate) {
+    console.error(`No expiry date found for square ${squareId}`);
+    return new Date();  // Return current date if no expiry date is found
+  }
   return new Date(expiryDate);
 }
 
