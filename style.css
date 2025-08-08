@@ -14,28 +14,41 @@
   border: 0.5px solid #ccc;
 }
 
-/* Mobile responsive layout */
+/* Mobile responsive layout for medium screens (tablets and larger mobile devices) */
 @media (max-width: 768px) {
   #board {
-    grid-template-columns: repeat(20, 1fr); /* More columns for tablet and small screens */
-    gap: 0.5px;
+    grid-template-columns: repeat(20, 1fr); /* 20 columns on medium mobile/tablet */
+    gap: 1px;
   }
 
   .square {
-    width: 5px; /* Smaller squares on mobile */
-    height: 5px;
+    width: 10px; /* Slightly bigger squares */
+    height: 10px;
   }
 }
 
-/* Extra small devices */
+/* Small devices (phones) */
 @media (max-width: 480px) {
   #board {
-    grid-template-columns: repeat(10, 1fr); /* Adjust for smaller phones */
-    gap: 0.5px;
+    grid-template-columns: repeat(15, 1fr); /* 15 columns on small screens */
+    gap: 1px;
   }
 
   .square {
-    width: 4px; /* Smaller squares */
-    height: 4px;
+    width: 12px; /* Larger squares for mobile phones */
+    height: 12px;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 320px) {
+  #board {
+    grid-template-columns: repeat(10, 1fr); /* 10 columns on very small screens */
+    gap: 1px;
+  }
+
+  .square {
+    width: 14px; /* Larger squares on very small screens */
+    height: 14px;
   }
 }
