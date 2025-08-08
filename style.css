@@ -4,6 +4,7 @@
   grid-template-columns: repeat(100, 1fr); /* 100 columns on desktop */
   gap: 1px;
   margin: 20px auto;
+  justify-items: center; /* Center squares within grid */
   width: max-content;
 }
 
@@ -19,6 +20,7 @@
   #board {
     grid-template-columns: repeat(20, 1fr); /* 20 columns on medium mobile/tablet */
     gap: 1px;
+    width: 100%; /* Make board take full width of the container */
   }
 
   .square {
@@ -32,6 +34,7 @@
   #board {
     grid-template-columns: repeat(15, 1fr); /* 15 columns on small screens */
     gap: 1px;
+    width: 100%; /* Full width for mobile */
   }
 
   .square {
@@ -45,6 +48,7 @@
   #board {
     grid-template-columns: repeat(10, 1fr); /* 10 columns on very small screens */
     gap: 1px;
+    width: 100%; /* Full width for very small screens */
   }
 
   .square {
