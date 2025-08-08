@@ -19,8 +19,8 @@ exports.handler = async function (event) {
         },
         quantity: 1,
       }],
-      success_url: 'https://theadvertisingboard.org/success.html',
-      cancel_url: 'https://theadvertisingboard.org/cancel.html',
+      success_url: `${process.env.URL}/success.html`, // Use dynamic URL
+      cancel_url: `${process.env.URL}/cancel.html`, // Use dynamic URL
       metadata: {
         square
       }
