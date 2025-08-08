@@ -19,8 +19,8 @@ exports.handler = async function (event) {
         },
         quantity: 1,
       }],
-      success_url: `${process.env.URL}/success.html`, // Use dynamic URL
-      cancel_url: `${process.env.URL}/cancel.html`, // Use dynamic URL
+      success_url: `${process.env.SITE_URL}/success.html`, // Use dynamic URL
+      cancel_url: `${process.env.SITE_URL}/cancel.html`, // Use dynamic URL
       metadata: {
         square
       }
