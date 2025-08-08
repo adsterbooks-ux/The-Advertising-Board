@@ -10,7 +10,7 @@ body {
 
 h1 {
   font-size: 2.5em;
-  margin-top: 30px; /* Adjusted top margin */
+  margin-top: 30px; /* Adjusted top margin to prevent overlap */
   position: relative;
   z-index: 20;
 }
