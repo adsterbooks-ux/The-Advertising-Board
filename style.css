@@ -1,7 +1,7 @@
 body {
-  background-color: #000;
-  color: #fff;
-  font-family: 'Arial', sans-serif;
+  background-color: #000;  /* Black background */
+  color: #fff;  /* White text for contrast */
+  font-family: 'Arial', sans-serif;  /* Modern font */
   text-align: center;
   margin: 0;
   padding: 0;
@@ -17,7 +17,7 @@ h1 {
   font-size: 1.5em;
   padding: 15px;
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.2);  /* Light transparent background */
   display: inline-block;
 }
 
@@ -28,7 +28,7 @@ h1 {
 }
 
 #countdown {
-  background-color: #4CAF50; /* Green */
+  background-color: #4CAF50;  /* Green */
   color: white;
 }
 
@@ -37,7 +37,7 @@ h1 {
 }
 
 #squares-bought {
-  background-color: #2196F3; /* Blue */
+  background-color: #2196F3;  /* Blue */
   color: white;
 }
 
@@ -67,10 +67,10 @@ button:hover {
 
 #board {
   display: grid;
-  grid-template-columns: repeat(100, 1fr);  /* 100 columns for desktop */
+  grid-template-columns: repeat(100, 1fr); /* 100 columns on desktop */
   gap: 1px;
   margin: 20px auto;
-  justify-items: center;
+  justify-items: center; /* Center squares within grid */
   width: max-content;
 }
 
@@ -90,9 +90,9 @@ button:hover {
 /* Mobile responsive layout */
 @media (max-width: 768px) {
   #board {
-    grid-template-columns: repeat(20, 1fr); /* 20 columns on medium mobile/tablet */
+    grid-template-columns: repeat(auto-fill, minmax(10px, 1fr)); /* Automatically fill the grid with squares */
     gap: 0;  /* Remove gaps between squares */
-    width: 100%; /* Make the board take the full width of the container */
+    width: 100%; /* Full width for mobile */
   }
 
   .square {
@@ -103,7 +103,7 @@ button:hover {
 
 @media (max-width: 480px) {
   #board {
-    grid-template-columns: repeat(15, 1fr); /* 15 columns on small screens */
+    grid-template-columns: repeat(auto-fill, minmax(12px, 1fr)); /* Fit more squares on mobile */
     gap: 0;  /* Remove gaps between squares */
     width: 100%; /* Full width for mobile */
   }
@@ -116,7 +116,7 @@ button:hover {
 
 @media (max-width: 320px) {
   #board {
-    grid-template-columns: repeat(10, 1fr); /* 10 columns on very small screens */
+    grid-template-columns: repeat(auto-fill, minmax(14px, 1fr)); /* Fit more squares on very small screens */
     gap: 0;  /* Remove gaps between squares */
     width: 100%; /* Full width for very small screens */
   }
