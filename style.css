@@ -10,7 +10,9 @@ body {
 
 h1 {
   font-size: 2.5em;
-  margin-top: 80px; /* Adjusted to make space for the fixed elements */
+  margin-top: 100px; /* Added space at the top */
+  position: relative;
+  z-index: 20;  /* Ensure title stays above the zoomable grid */
 }
 
 #countdown, #squares-bought {
@@ -21,8 +23,6 @@ h1 {
   background-color: rgba(255, 255, 255, 0.2);
   display: inline-block;
   position: fixed;
-  top: 10px;  /* Fixed to the top */
-  left: 20px;
   z-index: 10;
 }
 
@@ -35,6 +35,8 @@ h1 {
 #countdown {
   background-color: #4CAF50; /* Green */
   color: white;
+  top: 10px;  /* Fixed to the top */
+  left: 20px;
 }
 
 #countdown span {
@@ -44,6 +46,8 @@ h1 {
 #squares-bought {
   background-color: #2196F3; /* Blue */
   color: white;
+  top: 50px;  /* Move down so it doesn't overlap countdown */
+  left: 20px;
 }
 
 #squares-bought span {
@@ -54,7 +58,7 @@ h1 {
   position: fixed;
   top: 20px;
   right: 20px;
-  z-index: 10;
+  z-index: 10;  /* Keep zoom buttons above everything else */
   background-color: rgba(0, 0, 0, 0.5);
   padding: 10px;
   border-radius: 5px;
