@@ -51,7 +51,7 @@ h1 {
 #board {
   display: grid;
   grid-template-columns: repeat(50, 1fr); /* 50 columns for 50x50 grid */
-  gap: 0;  /* No gaps between squares */
+  gap: 0;  /* Remove gaps between squares */
   margin: 0 auto;
   justify-items: center;
   width: 100vw; /* Full width of the viewport */
@@ -62,10 +62,10 @@ h1 {
 
 /* Square Styling */
 .square {
-  width: 15px;
-  height: 15px;
+  width: 100%;  /* Ensure squares fill the grid container */
+  height: 100%;  /* Ensure squares fill the grid container */
   background-color: #ddd;
-  border: 0.5px solid #ccc;
+  border: 0; /* Remove borders to prevent gaps */
   cursor: pointer;
   transition: background-color 0.3s;
   box-sizing: border-box; /* Ensures border width is included in the size of the square */
@@ -86,8 +86,8 @@ h1 {
   }
 
   .square {
-    width: 20px;
-    height: 20px;
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -101,8 +101,8 @@ h1 {
   }
 
   .square {
-    width: 24px;
-    height: 24px;
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -116,8 +116,8 @@ h1 {
   }
 
   .square {
-    width: 28px;
-    height: 28px;
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -129,7 +129,7 @@ h1 {
   }
 
   .square {
-    width: 15px;
-    height: 15px;
+    width: 100%;
+    height: 100%;
   }
 }
