@@ -1,7 +1,7 @@
 body {
   background-color: #000;  /* Black background */
   color: #fff;  /* White text for contrast */
-  font-family: 'Arial', sans-serif;  /* Modern font */
+  font-family: 'Arial', sans-serif;
   text-align: center;
   margin: 0;
   padding: 0;
@@ -65,6 +65,14 @@ button:hover {
   background-color: #45a049;
 }
 
+.container {
+  width: 100%;
+  max-width: 100%;  /* Max width for mobile screens */
+  margin: 0 auto;
+  padding: 0 15px;  /* Adds space on both sides */
+  box-sizing: border-box;  /* Ensures padding doesn't affect the layout */
+}
+
 #board {
   display: grid;
   grid-template-columns: repeat(100, 1fr); /* 100 columns on desktop */
@@ -89,19 +97,27 @@ button:hover {
 
 /* Mobile responsive layout */
 @media (max-width: 768px) {
+  .container {
+    padding: 0 20px;  /* Increased space on mobile */
+  }
+
   #board {
-    grid-template-columns: repeat(auto-fill, minmax(10px, 1fr)); /* Automatically fill the grid with squares */
+    grid-template-columns: repeat(auto-fill, minmax(10px, 1fr)); /* Auto-fill columns */
     gap: 0;  /* Remove gaps between squares */
     width: 100%; /* Full width for mobile */
   }
 
   .square {
-    width: 10px;  /* Slightly bigger squares */
+    width: 10px;
     height: 10px;
   }
 }
 
 @media (max-width: 480px) {
+  .container {
+    padding: 0 20px;  /* Space on sides for smaller screens */
+  }
+
   #board {
     grid-template-columns: repeat(auto-fill, minmax(12px, 1fr)); /* Fit more squares on mobile */
     gap: 0;  /* Remove gaps between squares */
@@ -115,10 +131,14 @@ button:hover {
 }
 
 @media (max-width: 320px) {
+  .container {
+    padding: 0 15px;  /* Slightly less space on very small screens */
+  }
+
   #board {
-    grid-template-columns: repeat(auto-fill, minmax(14px, 1fr)); /* Fit more squares on very small screens */
+    grid-template-columns: repeat(auto-fill, minmax(14px, 1fr)); /* Fit more squares */
     gap: 0;  /* Remove gaps between squares */
-    width: 100%; /* Full width for very small screens */
+    width: 100%;
   }
 
   .square {
