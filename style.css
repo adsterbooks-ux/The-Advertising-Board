@@ -65,7 +65,7 @@ h1 {
   width: 100%;  /* Ensure squares fill the grid container */
   height: 100%;  /* Ensure squares fill the grid container */
   background-color: #ddd;
-  border: 0; /* Remove borders to prevent gaps */
+  border: 0.5px solid #ccc; /* Add border to make squares visible */
   cursor: pointer;
   transition: background-color 0.3s;
   box-sizing: border-box; /* Ensures border width is included in the size of the square */
