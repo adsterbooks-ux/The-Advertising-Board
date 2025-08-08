@@ -37,6 +37,28 @@ function generateGrid() {
     square.classList.add('square');
     square.dataset.index = i;
 
+    // Fetch purchase info for this square from the database (e.g., expiry date)
+    const expiryDate = getExpiryDate(i); // This function fetches expiry from the database
+    
+    const timeRemaining = calculateTimeRemaining(expiryDate); // Calculate remaining time
+
+    // Add countdown timer or message
+    const countdownElement = document.createElement('div');
+    countdownElement.classList.add('countdown');
+    countdownElement.innerText = timeRemaining;
+    square.appendChild(countdownElement);
+
+    // If expired, show the "Re-buy" button
+    if (timeRemaining === "Expired") {
+      const reBuyButton = document.createElement('button');
+      reBuyButton.innerText = "Re-buy";
+      reBuyButton.addEventListener('click', () => {
+        // Handle re-buy logic, such as sending the user to checkout
+        reBuySquare(i);
+      });
+      square.appendChild(reBuyButton);
+    }
+
     // Add click event for each square
     square.addEventListener('click', () => {
       fetch('/.netlify/functions/checkout', {
@@ -62,20 +84,43 @@ function generateGrid() {
   }
 }
 
-// Function to zoom the board
-function zoom(factor) {
-  scale *= factor;
-  board.style.transform = `scale(${scale})`;  // Apply scaling transformation
-  board.style.transformOrigin = 'center'; // Make sure it scales from the center
-
-  // Adjust grid size based on zoom level
-  if (scale < 0.5) {
-    gridSize = Math.max(50, gridSize - 10);  // Show fewer squares when zooming in
-  } else if (scale > 0.5) {
-    gridSize = Math.min(100, gridSize + 10);  // Show more squares when zooming out
+// Calculate remaining time for countdown
+function calculateTimeRemaining(expiryDate) {
+  const now = new Date();
+  const timeDiff = expiryDate - now;
+  
+  if (timeDiff <= 0) {
+    return "Expired";
   }
 
-  generateGrid();  // Re-generate the grid based on the new gridSize
+  const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+  return `${hours}h ${minutes}m remaining`;
+}
+
+// Fetch expiry date for a square from the backend
+function getExpiryDate(squareId) {
+  // Example of retrieving data from the database (replace with your logic)
+  const expiryDate = fetchExpiryDateFromDatabase(squareId);  // Mocked database call
+  return new Date(expiryDate);
+}
+
+// Re-buy the square (reset expiry date and purchase time)
+function reBuySquare(squareId) {
+  // Update expiry date in the database (replace with actual logic)
+  const newExpiryDate = new Date();
+  newExpiryDate.setDate(newExpiryDate.getDate() + 7);  // Add 7 days
+
+  // Update the backend with the new expiry date
+  updateSquareExpiryInDatabase(squareId, newExpiryDate);  // Mocked update function
+
+  // Re-generate the grid after the square is re-bought
+  generateGrid();
+}
+
+// Mocked database update function (replace with actual implementation)
+function updateSquareExpiryInDatabase(squareId, newExpiryDate) {
+  console.log(`Square ${squareId} expiry updated to: ${newExpiryDate}`);
 }
 
 // Initial grid generation (2,500 squares)
