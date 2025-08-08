@@ -8,11 +8,75 @@
 </head>
 <body>
   <h1>The Advertising Board</h1>
+
+  <!-- Countdown Timer Section -->
+  <div id="countdown">
+    <h2>Time Remaining: <span id="timer"></span></h2>
+  </div>
+
+  <!-- Squares Bought Section -->
+  <div id="squares-bought">
+    <h2>Squares Bought: <span id="square-count">0</span></h2>
+  </div>
+
+  <!-- Night Mode Toggle Button -->
+  <button id="night-mode-toggle">Toggle Night Mode</button>
+
+  <!-- Controls (Zoom In and Out) -->
   <div class="controls">
     <button onclick="zoom(1.1)">Zoom In</button>
     <button onclick="zoom(0.9)">Zoom Out</button>
   </div>
+
+  <!-- Board for the squares -->
   <div id="board"></div>
+
   <script src="script.js"></script>
+  
+  <!-- Countdown Timer Script -->
+  <script>
+    // Set the countdown date (e.g., 24 hours from now)
+    const countdownDate = new Date().getTime() + 24 * 60 * 60 * 1000; // 24-hour countdown
+
+    // Update the countdown every second
+    const x = setInterval(function() {
+
+      // Get the current time
+      const now = new Date().getTime();
+
+      // Calculate the time remaining
+      const distance = countdownDate - now;
+
+      // Time calculations for hours, minutes, and seconds
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Display the result in the element with id="timer"
+      document.getElementById("timer").innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
+
+      // If the countdown finishes, display a message
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("timer").innerHTML = "EXPIRED";
+      }
+    }, 1000);
+  </script>
+
+  <!-- Squares Bought Script -->
+  <script>
+    // Fetch the number of squares bought (assuming you're using Supabase)
+    const squareCount = 500;  // Example, you can replace with dynamic fetching from your database
+    document.getElementById('square-count').innerText = squareCount;
+  </script>
+
+  <!-- Night Mode Toggle Script -->
+  <script>
+    // Toggle night mode when the button is clicked
+    const toggleButton = document.getElementById('night-mode-toggle');
+    toggleButton.addEventListener('click', () => {
+      document.body.classList.toggle('night-mode');
+    });
+  </script>
 </body>
 </html>

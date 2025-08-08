@@ -1,3 +1,38 @@
+body {
+  background-color: #fff;  /* Light background by default */
+  color: #333;  /* Dark text for light mode */
+}
+
+#countdown, #squares-bought {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Night Mode Styles */
+body.night-mode {
+  background-color: #1e1e1e;  /* Dark background */
+  color: #fff;  /* White text for contrast */
+}
+
+#countdown, #squares-bought {
+  color: #fff;  /* Light text for night mode */
+}
+
+#night-mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#night-mode-toggle:hover {
+  background-color: #444;
+}
+
 /* Base styles for larger screens */
 #board {
   display: grid;
