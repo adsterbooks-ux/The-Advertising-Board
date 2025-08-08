@@ -52,13 +52,14 @@ h1 {
   display: grid;
   grid-template-columns: repeat(50, 1fr); /* 50 columns for 50x50 grid */
   gap: 0;  /* Remove gaps between squares */
-  margin: 20px auto;
+  margin: 0 auto;
   justify-items: center;
-  width: 100%;
+  width: 100%; /* Ensures the board fills the container */
+  height: 100%; /* Ensures the board fills the container */
   transition: transform 0.3s ease; /* Smooth transition for zoom */
 }
 
-/* Square Styling */
+/* Squares Styling */
 .square {
   width: 15px;
   height: 15px;
@@ -75,7 +76,7 @@ h1 {
 /* Mobile Version - Adjust grid layout for a square format */
 @media (max-width: 768px) {
   #board {
-    grid-template-columns: repeat(10, 1fr);  /* 10 columns on mobile initially */
+    grid-template-columns: repeat(10, 1fr);  /* Show 10 columns on mobile initially */
     gap: 0;  /* No gap between squares */
     width: 90%;  /* Make the grid width smaller but keep it square */
     height: auto;  /* Adjust the height automatically */
