@@ -1,41 +1,20 @@
 body {
-  background-color: #fff;  /* Light background by default */
-  color: #333;  /* Dark text for light mode */
+  background-color: #000;  /* Set background to black */
+  color: #fff;  /* White text for contrast */
 }
 
-#board {
-  display: grid;
-  grid-template-columns: repeat(100, 1fr); /* 100 columns on desktop */
-  gap: 1px;
-  margin: 20px auto;
-  justify-items: center; /* Center squares within grid */
-  width: max-content;
-}
-
-.square {
-  width: 8px;
-  height: 8px;
-  background-color: #ddd;
-  border: 0.5px solid #ccc;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-/* Hover effect for squares */
-.square:hover {
-  background-color: #bbb;
-}
-
-/* Night Mode Styles */
+/* For night mode, keep it as black, or tweak if you want darker blacks for elements */
 body.night-mode {
-  background-color: #1e1e1e;
-  color: #fff;
+  background-color: #000;  /* Keep the background black */
+  color: #fff;  /* White text for night mode */
 }
 
+/* Countdown timer, squares bought, and night mode button text will also be white */
 #countdown, #squares-bought {
   color: #fff;
 }
 
+/* Night Mode Toggle Button */
 #night-mode-toggle {
   position: fixed;
   top: 20px;
@@ -49,4 +28,59 @@ body.night-mode {
 
 #night-mode-toggle:hover {
   background-color: #444;
+}
+
+/* Base styles for larger screens (keeping squares and board the same) */
+#board {
+  display: grid;
+  grid-template-columns: repeat(100, 1fr);
+  gap: 1px;
+  margin: 20px auto;
+  justify-items: center;  /* Center squares within grid */
+  width: max-content;
+}
+
+.square {
+  width: 8px;
+  height: 8px;
+  background-color: #ddd;  /* Gray color for squares */
+  border: 0.5px solid #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Hover effect for squares */
+.square:hover {
+  background-color: #bbb;
+}
+
+/* Mobile responsiveness as per previous instructions */
+@media (max-width: 768px) {
+  #board {
+    grid-template-columns: repeat(20, 1fr);
+  }
+  .square {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  #board {
+    grid-template-columns: repeat(15, 1fr);
+  }
+  .square {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+@media (max-width: 320px) {
+  #board {
+    grid-template-columns: repeat(10, 1fr);
+  }
+  .square {
+    width: 14px;
+    height: 14px;
+  }
 }
