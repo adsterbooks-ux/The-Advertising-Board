@@ -56,7 +56,6 @@ h1 {
   justify-items: center;
   width: max-content;
   transition: transform 0.3s ease; /* Smooth transition for zoom */
-  transform: scale(0.1);  /* Initial super zoomed-out scale */
 }
 
 .square {
@@ -75,9 +74,9 @@ h1 {
 /* Mobile responsive layout */
 @media (max-width: 768px) {
   #board {
-    grid-template-columns: repeat(10, 1fr);  /* Fit 10 columns on mobile initially */
-    gap: 0;
-    width: 100%;
+    grid-template-columns: repeat(10, 1fr);  /* 10 columns for smaller mobile view initially */
+    gap: 0;  /* No gap between squares */
+    width: 100%;  /* Full width */
   }
 
   .square {
@@ -89,7 +88,7 @@ h1 {
 @media (max-width: 480px) {
   #board {
     grid-template-columns: repeat(10, 1fr);  /* Keep 10 columns on very small screens */
-    gap: 0;  /* No gap between squares */
+    gap: 0;  /* Remove gaps between squares */
   }
 
   .square {

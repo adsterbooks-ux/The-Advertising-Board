@@ -1,4 +1,4 @@
-let scale = 0.1;  // Initial zoom level (super zoomed-out)
+let scale = 1;  // Initial zoom level (full grid size)
 const board = document.getElementById('board');
 
 // Initially, show 10,000 squares (100x100 grid)
@@ -47,7 +47,7 @@ function zoom(factor) {
   // Adjust grid size based on zoom level
   if (scale < 0.5) {
     gridSize = Math.max(100, gridSize - 10);  // Show fewer squares when zooming in
-  } else if (scale > 0.1) {
+  } else if (scale > 0.5) {
     gridSize = Math.min(200, gridSize + 10);  // Show more squares when zooming out
   }
 
