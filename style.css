@@ -9,8 +9,8 @@ body {
 }
 
 h1 {
-  font-size: 1.5em;  /* Make header smaller to fit on one row */
-  margin-top: 20px;  /* Adjust top margin */
+  font-size: 2.5em;
+  margin-top: 120px; /* Adjusted top margin to prevent overlap */
   position: relative;
   z-index: 20;
 }
@@ -48,27 +48,51 @@ h1 {
   box-sizing: border-box;
 }
 
+/* Leaderboard Styling */
+#leaderboard {
+  background-color: #333;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+#leaderboard h2 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+#leaderboard-list {
+  list-style: none;
+  padding: 0;
+}
+
+#leaderboard-list li {
+  font-size: 1.2em;
+  margin: 5px 0;
+}
+
+/* Board Styling (Squares) */
 #board {
   display: grid;
-  grid-template-columns: repeat(10, 1fr);  /* 10 columns on mobile initially */
+  grid-template-columns: repeat(50, 1fr); /* 50 columns for 50x50 grid */
   gap: 0;  /* No gap between squares */
   margin: 0 auto;
   justify-items: center;
-  width: 90%;  /* Make the grid width smaller but keep it square */
-  height: auto;
-  box-sizing: border-box;
+  width: 100vw; /* Full width of the viewport */
+  height: 100vh; /* Full height of the viewport */
+  box-sizing: border-box; /* Ensure borders are part of the element size */
   transition: transform 0.3s ease; /* Smooth transition for zoom */
 }
 
-/* Square Styling */
 .square {
-  width: 100%;  /* Ensure squares fill the grid container */
-  height: 100%;  /* Ensure squares fill the grid container */
+  width: 15px;
+  height: 15px;
   background-color: #ddd;
-  border: 0.5px solid #ccc; /* Add border to make squares visible */
+  border: 0.5px solid #ccc; /* Border for visibility */
   cursor: pointer;
   transition: background-color 0.3s;
-  box-sizing: border-box; /* Ensures border width is included in the size of the square */
+  box-sizing: border-box;
 }
 
 .square:hover {

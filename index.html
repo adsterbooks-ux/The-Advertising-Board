@@ -9,17 +9,21 @@
 <body>
   <h1>The Advertising Board</h1>
 
-  <!-- Controls Section (Zoom In and Out, Fixed at top right) -->
-  <div class="zoom-controls">
+  <!-- Leaderboard Section -->
+  <div id="leaderboard" style="margin-top: 20px; background-color: #333; padding: 10px;">
+    <h2>Top Buyers</h2>
+    <ul id="leaderboard-list">
+      <!-- Top buyers will appear here dynamically -->
+    </ul>
+  </div>
+
+  <div class="controls">
     <button onclick="zoom(1.1)">Zoom In</button>
     <button onclick="zoom(0.9)">Zoom Out</button>
   </div>
 
-  <!-- Main Container for the Board -->
-  <div class="container">
-    <!-- Board for the squares -->
-    <div id="board"></div>
-  </div>
+  <!-- The board where squares will be displayed -->
+  <div id="board"></div>
 
   <script src="script.js"></script>
 </body>

@@ -4,6 +4,30 @@ const board = document.getElementById('board');
 // Initially, show 50x50 grid (total 2,500 squares)
 let gridSize = 50;  // 50x50 grid (total 2,500 squares)
 
+// Mock data for leaderboard (In a real-world scenario, this would come from your database)
+const leaderboard = [
+  { name: 'User 1', squaresBought: 150 },
+  { name: 'User 2', squaresBought: 120 },
+  { name: 'User 3', squaresBought: 100 },
+  { name: 'User 4', squaresBought: 80 },
+  { name: 'User 5', squaresBought: 60 }
+];
+
+// Function to update leaderboard
+function updateLeaderboard() {
+  const leaderboardList = document.getElementById('leaderboard-list');
+  leaderboardList.innerHTML = ''; // Clear previous leaderboard
+
+  leaderboard.forEach((user, index) => {
+    const listItem = document.createElement('li');
+    listItem.textContent = `${index + 1}. ${user.name} - ${user.squaresBought} squares`;
+    leaderboardList.appendChild(listItem);
+  });
+}
+
+// Call function to display leaderboard on page load
+updateLeaderboard();
+
 // Function to generate the grid based on gridSize
 function generateGrid() {
   board.innerHTML = '';  // Clear the existing grid
