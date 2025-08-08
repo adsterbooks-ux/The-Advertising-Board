@@ -57,6 +57,7 @@ h1 {
   width: 100%; /* Ensures the board fills the container */
   height: 100%; /* Ensures the board fills the container */
   transition: transform 0.3s ease; /* Smooth transition for zoom */
+  box-sizing: border-box; /* Ensures padding and borders don't affect square size */
 }
 
 /* Squares Styling */
@@ -67,6 +68,7 @@ h1 {
   border: 0.5px solid #ccc;
   cursor: pointer;
   transition: background-color 0.3s;
+  box-sizing: border-box; /* Ensures border width is included in the size of the square */
 }
 
 .square:hover {
