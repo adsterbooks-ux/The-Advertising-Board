@@ -1,8 +1,8 @@
 let scale = 1;  // Initial zoom level (full grid size)
 const board = document.getElementById('board');
 
-// Initially, show 10,000 squares (100x100 grid)
-let gridSize = 100;  // 100x100 grid (total 10,000 squares)
+// Initially, show 50x50 grid (total 2,500 squares)
+let gridSize = 50;  // 50x50 grid (total 2,500 squares)
 
 // Function to generate the grid based on gridSize
 function generateGrid() {
@@ -46,13 +46,13 @@ function zoom(factor) {
 
   // Adjust grid size based on zoom level
   if (scale < 0.5) {
-    gridSize = Math.max(100, gridSize - 10);  // Show fewer squares when zooming in
+    gridSize = Math.max(50, gridSize - 10);  // Show fewer squares when zooming in
   } else if (scale > 0.5) {
-    gridSize = Math.min(200, gridSize + 10);  // Show more squares when zooming out
+    gridSize = Math.min(100, gridSize + 10);  // Show more squares when zooming out
   }
 
   generateGrid();  // Re-generate the grid based on the new gridSize
 }
 
-// Initial grid generation (10,000 squares)
+// Initial grid generation (2,500 squares)
 generateGrid();

@@ -10,7 +10,7 @@ body {
 
 h1 {
   font-size: 2.5em;
-  margin-top: 120px;
+  margin-top: 50px; /* Space for header */
   position: relative;
   z-index: 20;
 }
@@ -50,18 +50,18 @@ h1 {
 
 #board {
   display: grid;
-  grid-template-columns: repeat(100, 1fr);  /* 100 columns for 100x100 grid */
+  grid-template-columns: repeat(50, 1fr); /* 50 columns for 50x50 grid */
   gap: 0;  /* Remove gaps between squares */
-  margin: 0 auto;
+  margin: 20px auto;
   justify-items: center;
   width: 100%;
   transition: transform 0.3s ease; /* Smooth transition for zoom */
 }
 
-/* Squares Styling */
+/* Square Styling */
 .square {
-  width: 8px;
-  height: 8px;
+  width: 15px;
+  height: 15px;
   background-color: #ddd;
   border: 0.5px solid #ccc;
   cursor: pointer;
@@ -75,58 +75,58 @@ h1 {
 /* Mobile Version - Adjust grid layout for a square format */
 @media (max-width: 768px) {
   #board {
-    grid-template-columns: repeat(10, 1fr);  /* Show 10 columns on mobile initially */
-    gap: 0;  /* Remove gaps between squares */
+    grid-template-columns: repeat(10, 1fr);  /* 10 columns on mobile initially */
+    gap: 0;  /* No gap between squares */
     width: 90%;  /* Make the grid width smaller but keep it square */
     height: auto;  /* Adjust the height automatically */
     margin: 0 auto;
   }
 
   .square {
-    width: 10px;
-    height: 10px;
+    width: 20px;
+    height: 20px;
   }
 }
 
 @media (max-width: 480px) {
   #board {
-    grid-template-columns: repeat(10, 1fr);  /* Keep 10 columns on small screens */
+    grid-template-columns: repeat(8, 1fr);  /* Keep 8 columns on small screens */
     gap: 0;  /* Remove gaps between squares */
-    width: 90%;  /* Make the grid width smaller */
-    height: auto;  /* Adjust the height automatically */
+    width: 90%;  /* Ensure it fills the screen */
+    height: auto;
     margin: 0 auto;
   }
 
   .square {
-    width: 12px;
-    height: 12px;
+    width: 24px;
+    height: 24px;
   }
 }
 
 @media (max-width: 320px) {
   #board {
-    grid-template-columns: repeat(8, 1fr);  /* 8 columns on very small screens */
+    grid-template-columns: repeat(6, 1fr);  /* 6 columns on very small screens */
     gap: 0;  /* Remove gaps between squares */
-    width: 90%;  /* Ensure the grid stays proportional */
-    height: auto;  /* Adjust the height automatically */
+    width: 90%;  /* Make sure the grid stays proportional */
+    height: auto;
     margin: 0 auto;
   }
 
   .square {
-    width: 14px;
-    height: 14px;
+    width: 28px;
+    height: 28px;
   }
 }
 
 /* Desktop Version */
 @media (min-width: 769px) {
   #board {
-    grid-template-columns: repeat(100, 1fr); /* 100 columns on desktop */
+    grid-template-columns: repeat(50, 1fr); /* 50 columns for desktop version */
     gap: 0;  /* No gaps between squares */
   }
 
   .square {
-    width: 8px;
-    height: 8px;
+    width: 15px;
+    height: 15px;
   }
 }
