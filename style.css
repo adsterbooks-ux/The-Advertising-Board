@@ -17,24 +17,25 @@
 /* Mobile responsive layout */
 @media (max-width: 768px) {
   #board {
-    grid-template-columns: repeat(10, 1fr); /* 10 columns on smaller screens */
-    gap: 1px;
+    grid-template-columns: repeat(20, 1fr); /* More columns for tablet and small screens */
+    gap: 0.5px;
   }
 
   .square {
-    width: 6px;  /* Smaller squares on mobile */
-    height: 6px;
+    width: 5px; /* Smaller squares on mobile */
+    height: 5px;
   }
 }
 
-/* Additional mobile optimizations */
+/* Extra small devices */
 @media (max-width: 480px) {
   #board {
-    grid-template-columns: repeat(5, 1fr);  /* Less squares visible */
+    grid-template-columns: repeat(10, 1fr); /* Adjust for smaller phones */
+    gap: 0.5px;
   }
 
   .square {
-    width: 4px;  /* Even smaller squares */
+    width: 4px; /* Smaller squares */
     height: 4px;
   }
 }
