@@ -9,16 +9,6 @@
 <body>
   <h1>The Advertising Board</h1>
 
-  <!-- Countdown Timer Section (Fixed at top) -->
-  <div id="countdown" class="fixed-top">
-    <h2>Time Remaining: <span id="timer"></span></h2>
-  </div>
-
-  <!-- Squares Bought Section (Fixed at top) -->
-  <div id="squares-bought" class="fixed-top">
-    <h2>Squares Bought: <span id="square-count">0</span></h2>
-  </div>
-
   <!-- Controls Section (Zoom In and Out, Fixed at top right) -->
   <div class="zoom-controls">
     <button onclick="zoom(1.1)">Zoom In</button>
@@ -32,33 +22,5 @@
   </div>
 
   <script src="script.js"></script>
-
-  <!-- Countdown Timer Script -->
-  <script>
-    // Set the countdown date (e.g., 24 hours from now)
-    const countdownDate = new Date().getTime() + 24 * 60 * 60 * 1000; // 24-hour countdown
-
-    const x = setInterval(function() {
-      const now = new Date().getTime();
-      const distance = countdownDate - now;
-
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      document.getElementById("timer").innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
-
-      if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("timer").innerHTML = "EXPIRED";
-      }
-    }, 1000);
-  </script>
-
-  <!-- Squares Bought Script -->
-  <script>
-    const squareCount = 500;  // Example, you can replace with dynamic fetching from your database
-    document.getElementById('square-count').innerText = squareCount;
-  </script>
 </body>
 </html>
