@@ -5,11 +5,12 @@ body {
   text-align: center;
   margin: 0;
   padding: 0;
+  position: relative;
 }
 
 h1 {
   font-size: 2.5em;
-  margin-top: 20px;
+  margin-top: 80px; /* Adjusted to make space for the fixed elements */
 }
 
 #countdown, #squares-bought {
@@ -17,8 +18,12 @@ h1 {
   font-size: 1.5em;
   padding: 15px;
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.2);  /* Light transparent background */
+  background-color: rgba(255, 255, 255, 0.2);
   display: inline-block;
+  position: fixed;
+  top: 20px;  /* Fixed to the top */
+  left: 20px;
+  z-index: 10;
 }
 
 #countdown h2, #squares-bought h2 {
@@ -28,7 +33,7 @@ h1 {
 }
 
 #countdown {
-  background-color: #4CAF50;  /* Green */
+  background-color: #4CAF50; /* Green */
   color: white;
 }
 
@@ -37,7 +42,7 @@ h1 {
 }
 
 #squares-bought {
-  background-color: #2196F3;  /* Blue */
+  background-color: #2196F3; /* Blue */
   color: white;
 }
 
@@ -47,9 +52,9 @@ h1 {
 
 .zoom-controls {
   position: fixed;
-  top: 10px;
+  top: 20px;
   right: 20px;
-  z-index: 10;  /* Keep the zoom buttons above everything else */
+  z-index: 10;  /* Keep zoom buttons above everything else */
   background-color: rgba(0, 0, 0, 0.5);
   padding: 10px;
   border-radius: 5px;
@@ -83,7 +88,7 @@ h1 {
   grid-template-columns: repeat(100, 1fr); /* 100 columns on desktop */
   gap: 1px;
   margin: 20px auto;
-  justify-items: center; /* Center squares within grid */
+  justify-items: center;
   width: max-content;
   transition: transform 0.3s ease; /* Smooth transition for zoom */
 }
