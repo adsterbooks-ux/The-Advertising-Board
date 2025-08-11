@@ -7,6 +7,38 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <h1>The Advertising Board</h1>
+
+  <!-- Leaderboard Section -->
+  <div id="leaderboard" style="margin-top: 20px; background-color: #333; padding: 10px;">
+    <h2>Top Buyers</h2>
+    <ul id="leaderboard-list">
+      <!-- Top buyers will appear here dynamically -->
+    </ul>
+  </div>
+
+  <div class="controls">
+    <button onclick="zoom(1.1)">Zoom In</button>
+    <button onclick="zoom(0.9)">Zoom Out</button>
+  </div>
+
+  <!-- The board where squares will be displayed -->
+  <div id="board"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Advertising Board</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
   <div class="container">
     <div class="title-container">
       <h1>The Advertising Board</h1>
@@ -17,7 +49,6 @@
     </div>
     
     <div class="board-container">
-      <!-- The board where squares will be displayed -->
       <div id="board"></div>
     </div>
 
@@ -25,7 +56,7 @@
   </div>
 </body>
 </html>
-
+ -->
 
 
 
