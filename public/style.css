@@ -1,0 +1,149 @@
+body {
+  background-color: #000;  /* Black background */
+  color: #fff;  /* White text for contrast */
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+
+
+
+
+/* Board Styling (Squares) */
+
+
+/* MOBILE 320px and up*/
+@media only screen and (min-device-width: 320px) {
+  .container {
+    width: 100%;
+  }
+
+  h1 {
+  font-size: 1em;
+  padding: 10px; /* Adjusted top margin to prevent overlap */
+  z-index: 20;
+  }
+
+  .board-container {
+    margin: 20px;
+  }
+
+  #board {
+    display: grid;
+    grid-template-columns: repeat(100, 1fr);
+    grid-template-rows: repeat(100, 1fr);
+    gap: 0;  /* No gap between squares */
+    justify-items: center;
+    width: 90vw; /* Full width of the viewport */
+    height: 100dvh; /* Full height of the viewport */
+    box-sizing: border-box; /* Ensure borders are part of the element size */
+    transition: transform 0.3s ease; /* Smooth transition for zoom */
+  }
+
+  .square {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-size: 0.6em;
+    box-sizing: border-box;
+    border-color:#fff;
+  }
+
+  .square:hover {
+    background-color: #bbb;
+  }
+
+}
+
+/* Small devices 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}
+
+
+/* timer */
+
+.timer {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+p {
+  width: 40px;
+  padding: 10px;
+  border-radius: 10px;
+  background: white;
+  color: black;
+  font-size: 10px;
+  text-align: center;
+}
+
+
+
+
+/* Leaderboard Styling */
+#leaderboard {
+  background-color: #333;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 10px;
+  z-index: 15;
+  position: relative;
+}
+
+#leaderboard h2 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+#leaderboard-list {
+  list-style: none;
+  padding: 0;
+}
+
+#leaderboard-list li {
+  font-size: 1.2em;
+  margin: 5px 0;
+}
+
+
+.zoom-controls {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.zoom-controls button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.zoom-controls button:hover {
+  background-color: #45a049;
+}
