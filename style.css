@@ -11,7 +11,7 @@ body {
 
 h1 {
   font-size: 2.5em;
-  margin-top: 30px; /* Adjusted top margin to prevent overlap */
+  margin-top: 30px; /* Adjusted top margin */
   position: relative;
   z-index: 20;
 }
