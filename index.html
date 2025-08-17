@@ -6,27 +6,24 @@
   <title>The Advertising Board</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <h1>The Advertising Board</h1>
+  <body>
+    <div class="container">
+      <div class="title-container">
+        <h1>The Advertising Board</h1>
+      </div>
 
-  <!-- Leaderboard Section -->
-  <div id="leaderboard" style="margin-top: 20px; background-color: #333; padding: 10px;">
-    <h2>Top Buyers</h2>
-    <ul id="leaderboard-list">
-      <!-- Top buyers will appear here dynamically -->
-    </ul>
-  </div>
+      <div class="timer">
+        <p id="countdown">10:00</p>
+      </div>
+      
+      <div class="board-container">
+        <!-- The board where squares will be displayed -->
+        <div id="board"></div>
+      </div>
 
-  <div class="controls">
-    <button onclick="zoom(1.1)">Zoom In</button>
-    <button onclick="zoom(0.9)">Zoom Out</button>
-  </div>
-
-  <!-- The board where squares will be displayed -->
-  <div id="board"></div>
-
-  <script src="script.js"></script>
-</body>
+      <script src="script.js"></script>
+    </div>
+  </body>
 </html>
 
 
@@ -61,6 +58,10 @@
 
 
   
+  <!-- <div class="controls">
+    <button onclick="zoom(1.1)">Zoom In</button>
+    <button onclick="zoom(0.9)">Zoom Out</button>
+  </div> -->
     
     <!-- Leaderboard Section -->
     <!-- <div id="leaderboard">
